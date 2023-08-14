@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-
+""" Holberton AirBnB Console """
 import cmd
 import sys
 import json
@@ -31,11 +31,11 @@ class HBNBCommand(cmd.Cmd):
         exit()
 
     def emptyline(self):
-        """pass when emptyline entered """
+        """ Method to pass when emptyline entered """
         pass
 
     def do_create(self, arg):
-        """create a new instance """
+        """ Create a new instance """
         if len(arg) == 0:
             print('** class name missing **')
             return
@@ -51,7 +51,7 @@ class HBNBCommand(cmd.Cmd):
                     print("** class doesn't exist **")
 
     def do_show(self, arg):
-        """print instance """
+        """ Method to print instance """
         if len(arg) == 0:
             print('** class name missing **')
             return
@@ -69,7 +69,7 @@ class HBNBCommand(cmd.Cmd):
             print('** instance id missing **')
 
     def do_destroy(self, arg):
-        """ Delete instance with class and id """
+        """ Method to delete instance with class and id """
         if len(arg) == 0:
             print("** class name missing **")
             return
@@ -92,7 +92,7 @@ class HBNBCommand(cmd.Cmd):
                 return
 
     def do_all(self, arg):
-        """ print all instances """
+        """ Method to print all instances """
         if len(arg) == 0:
             print([str(a) for a in storage.all().values()])
         elif arg not in self.classes:
@@ -101,7 +101,7 @@ class HBNBCommand(cmd.Cmd):
             print([str(a) for b, a in storage.all().items() if arg in b])
 
     def do_update(self, arg):
-        """update JSON file"""
+        """ Method to update JSON file"""
         arg = arg.split()
         if len(arg) == 0:
             print('** class name missing **')
